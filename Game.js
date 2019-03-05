@@ -44,7 +44,25 @@ class Game {
      } else if (e.key === "ArrowRight") {
         this.activePlayer.activeToken.moveRight(this.board.columns);    
       } else (e.key === "ArrowDown") {
-        //play token
+       playToken() {
+     let spaces = this.board.spaces;
+     let activeToken = this.ativePlayer.activeToken;
+     let targetColumn = spaces[activeToken.columnLocation];
+     let targetSpace = null;
+     
+     for (let space of targetColumn) {
+       if (space.token === null) {
+         
+        targetpace = space;
+       }
+     }
+     if (targetSpace !== null) {
+       game.ready = false;
+       activeToken.drop(targetSpace);
+     }
+   }
+        }
     }
   }
+   
 }
