@@ -18,6 +18,8 @@ class Game {
     return players;
     }    
   
+  //Gets game ready for players
+  
   startGame() {
   
   };
