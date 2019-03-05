@@ -5,7 +5,6 @@ class Game {
     this.board: new Board();
     this.players: this.createPlayers();
     this.ready: false;
-    this.columnLocation: 0;
   }
   
   /** 
@@ -40,28 +39,10 @@ class Game {
   handleKeydown(e) {
     if (this.ready) {
      if (e.key === "ArrowLeft") {
-       /** 
-       * Gets left offset of html element.
-       * @return  {number}   Left offset of token object's htmlToken.
-       */
-       moveLeft() {
-         if (this.columnLocation > 0) {
-         this.htmlToken.style.left = this.offsetLeft - 76;
-         this.columnLocation -= 1;
-       }
-       
-      
-       }
-     
+        this.activePlayer.activeToken.moveLeft();    
+       },
      } else if (e.key === "ArrowRight") {
-        /** 
-       * Moves html token one column to right.
-       * @param   {number}    columns - number of columns in the game board
-       */
-        moveRight(columns) {
-         if (this.columnLocation < columns -1) {
-         this.htmlToken.style.left = this.offsetLeft + 76;
-         this.columnLocation += 1;
+        this.activePlayer.activeToken.moveRight(this.board.columns);    
       } else (e.key === "ArrowDown") {
         //play token
     }
