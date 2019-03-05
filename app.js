@@ -1,6 +1,6 @@
 //Initialize new Game object
 
-new game();
+const game = new Game();
 
 
 /** 
