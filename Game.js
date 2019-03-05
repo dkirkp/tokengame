@@ -23,4 +23,8 @@ class Game {
   startGame() {
   
   };
+  
+  get activePlayer() {
+    const activePlayer = players.filter(player => player.active === true);
+    return activePlayer;
 }
