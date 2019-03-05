@@ -21,10 +21,12 @@ class Game {
   //Gets game ready for players
   
   startGame() {
-  
+    this.board.drawHTMLBoard();
+    this.activePlayer.activeToken.drawHTMLToken();
+    this.game.ready = true;
   };
   
   get activePlayer() {
-    const activePlayer = players.filter(player => player.active === true);
+    return this.players.find(player => player.active);
     return activePlayer;
 }
