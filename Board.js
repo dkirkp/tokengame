@@ -29,9 +29,10 @@ class Board {
   //Create new board @method
 
   drawHTMLBoard() {
-    for (li i = 0; i < this.spaces.length; i++) {
-     li board = new Spaces(this.spaces[i]); 
+    for (let column of this.spaces) {
+      for (let space of column) {
+        space.drawSVGSpace();
+      }
     }
-    return board;
   };
 }
