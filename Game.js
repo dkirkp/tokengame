@@ -29,4 +29,21 @@ class Game {
   get activePlayer() {
     return this.players.find(player => player.active);
     return activePlayer;
+  }
+  
+  /**
+  * Branches code, depending on what key player presses
+  * @param   {Object}    e - Keydown event object
+  */
+  
+  handleKeydown(e) {
+    if (this.ready) {
+     if (e.key === "ArrowLeft") {
+       //move left
+     } else if (e.key === "ArrowRight") {
+        //move right
+      } else (e.key === "ArrowDown") {
+        //play token
+    }
+  }
 }
