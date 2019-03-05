@@ -13,3 +13,10 @@ document.getElementById('begin-game').addEventListener('click', function() {
 });
 
 
+/** 
+ * Listens for keyboard presses
+ */
+
+document.addEventListener('keydown', function(event) {
+  game.handleKeydown(event);
+});
