@@ -145,5 +145,28 @@ gameOver (message) {
   document.getElementById('game-over').style.display = 'block';
   document.getElementById('game-over').textContent = message;
 }
+/**
+ * Finds Space object to drop Token into, drops Token
+ */
+playToken(){
+    let spaces = this.board.spaces;
+    let activeToken = this.activePlayer.activeToken;
+    let targetColumn = spaces[activeToken.columnLocation];
+    let targetSpace = null;
 
+    for (let space of targetColumn) {
+        if (space.token === null) {
+            targetSpace = space;
+        }
+    }
+
+    if (targetSpace !== null) {
+        const game = this;
+        game.ready = false;
+
+        activeToken.drop(targetSpace, function(){
+            game.updateGameState(activeToken, targetSpace);           
+        });  
+    }              
+}
 }
