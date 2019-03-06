@@ -136,7 +136,7 @@ checkForWin(target){
     return win;
 }
 
-  swithPlayers () {
+  switchPlayers () {
     for(let player of this.players) {
         player.active = player.active === true? false :true;
     }
